@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<!-- if condition only if youre logged in you see the sidebar -->
+
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light py-1" *ngIf="checkLoggedIn()">
+          <app-sidebar ></app-sidebar>
+        </div>
+
+<div class="col py-3">
+  <router-outlet></router-outlet>
+</div>
+  </div>
+</div>
+

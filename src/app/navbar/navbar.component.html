@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand ms-2" href="#" style="color: blue;" >ABC E-Commerce</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="checkLoggedIn()">
+      <ul class="nav navbar-nav ms-auto" style="margin-right: 0px; ">
+        
+      <i class="fa fa-shopping-cart ms-2" routerLink="cart" aria-hidden="true" style="margin-top: 13px;"><span class=" translate-middle badge rounded-pill bg-primary" style="font-size:10px;">
+        {{notifs}}
+      </span></i>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle ms-2 " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right:70px; color: blue;">
+            Profile
+          </a>
+          <ul class="dropdown-menu" >
+            <li><a class="dropdown-item" routerLink ='profile' style="color: blue;">Profile Details</a></li>
+            <li><a class="dropdown-item" routerLink='login' (click)="logoutUser()" style="color: blue;">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
