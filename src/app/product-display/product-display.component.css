@@ -4,3 +4,6 @@
 .sort:active{
   color: blue;
 }
+::placeholder{
+  font-size: smaller;
+}

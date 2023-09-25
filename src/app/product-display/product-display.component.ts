@@ -13,6 +13,8 @@ import { ProductService } from '../services/product.service';
 export class ProductDisplayComponent {
 
   id:number
+  Title:string=''
+  searchTitle:string=''
   category:string
   products:IProductsList
   sortField:string
@@ -87,6 +89,10 @@ export class ProductDisplayComponent {
   setSortCategory(field:string, direction:string){
     this.sortField=field
     this.sortDirection=direction
+  }
+
+  search(){
+    this.searchTitle=this.Title
   }
 
 }
