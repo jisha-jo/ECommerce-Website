@@ -15,6 +15,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { SortPipe } from './pipes/sort.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SortPipe } from './pipes/sort.pipe';
     ProductDetailsComponent,
     ProductDisplayComponent,
     ProfileComponent,
-    SortPipe
+    SortPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

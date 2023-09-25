@@ -14,7 +14,9 @@ export class ProductDisplayComponent {
 
   id:number
   category:string
-  products:IProductsList 
+  products:IProductsList
+  sortField:string
+  sortDirection:string 
 
   constructor(private product: ProductService, private messageService:MessageService, private categoryService:CategoryService, private route: ActivatedRoute, private productService:ProductService){
 
@@ -80,6 +82,11 @@ export class ProductDisplayComponent {
     (error)=>{
       console.log(error, 'error')
     })
+  }
+
+  setSortCategory(field:string, direction:string){
+    this.sortField=field
+    this.sortDirection=direction
   }
 
 }

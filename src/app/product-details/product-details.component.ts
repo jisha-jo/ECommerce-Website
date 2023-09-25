@@ -25,11 +25,6 @@ export class ProductDetailsComponent {
   productQty:number=1
   productId:string
 
-  // cartLocalStorageList
-  // currentCart
-  // currentUser=JSON.parse(sessionStorage.getItem('user'))
-  // cartStorageList
-
   
 
   constructor(private route: ActivatedRoute, private productService:ProductService, private messageService:MessageService, private categoryService: CategoryService,private router:Router,private loginService:LoginService){
