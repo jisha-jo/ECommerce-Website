@@ -20,6 +20,7 @@ export class ProductDetailsComponent {
   currentUser:IUser
   cartLocal
   exisiting:boolean
+  notifs:number
 
   productQty:number=1
   productId:string
@@ -69,12 +70,19 @@ export class ProductDetailsComponent {
     })
   }
 
+  getNotifs(){
+    let currentUser:IUser=this.loginService.getUsersDetails()
+     this.notifs=this.loginService.getQuantityOfCart(currentUser.id)
+
+     //need to send it using behaviour subject
+   }
+
   addToCart(product:IProduct){
 
     for(let i=0;i<this.productQty;i++){
       this.loginService.addToCart(this.currentUser.id, product)
     }
-
+    this.getNotifs()
   }
 
   addToCartStorage(cartProduct:IProduct){

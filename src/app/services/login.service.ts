@@ -170,7 +170,13 @@ export class LoginService {
 
   getQuantityOfCart(userid:number){
     let cart: ICart = JSON.parse(sessionStorage.getItem(userid + '_cart'))
-    return cart.totalItems
+    if(cart!=null){
+      return cart.totalItems
+    }
+    else{
+      return 0
+    }
+    
   }
 
    

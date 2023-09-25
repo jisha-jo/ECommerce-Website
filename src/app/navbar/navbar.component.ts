@@ -11,24 +11,26 @@ import { ICart } from '../models/cartModel';
 })
 export class NavbarComponent {
 
-  notifs:number
-  currentUser:IUser
+   //notifs:number
+   currentUser:IUser
 
-  constructor(private loginService:LoginService){
+   constructor(private loginService:LoginService){
+    //this.getNotifs()
+   }
     
-    let currentUser:IUser=this.loginService.getUsersDetails()
-    this.notifs=loginService.getQuantityOfCart(currentUser.id)
-    
-  }
+   logoutUser(){
+     this.loginService.userLogout()
+   }
 
-  logoutUser(){
-    this.loginService.userLogout()
-  }
+   checkLoggedIn(){
+     return this.loginService.getUsersDetails()
+   }
 
-  checkLoggedIn(){
-    return this.loginService.getUsersDetails()
-  }
+  //  getNotifs(){
+  //     if(!(this.currentUser=this.loginService.getUsersDetails())){
+  //       this.notifs=this.loginService.getQuantityOfCart(this.currentUser?.id)
+  //     }
+      
 
-  
-
-}
+     //need to send it using behaviour subject
+   }

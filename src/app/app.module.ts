@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ProfileComponent } from './profile/profile.component';
     CartComponent,
     ProductDetailsComponent,
     ProductDisplayComponent,
-    ProfileComponent
+    ProfileComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,
