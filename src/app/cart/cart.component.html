@@ -59,7 +59,7 @@
         <div class="card-body">
           <h5>Subtotal: <span class="fw-light" style="float: right;">{{cartItem.total | currency:'USD'}}</span></h5>
           <h5>Shipping Charge: <span class="fw-light" style="float: right;">{{shipping | currency:'USD'}}</span></h5>
-          <h5>Total: <span class="fw-light" style="float: right;">{{total | currency:'USD'}}</span></h5>
+          <h5>Total: <span class="fw-light" style="float: right;">{{shipping+cartItem.total | currency:'USD'}}</span></h5>
             
           <hr>
           <button class="btn-success w-100 " style="border:none; border-radius: 5px;">Confirm Order</button>

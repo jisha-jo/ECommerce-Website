@@ -5,7 +5,7 @@ import { ILogin } from '../models/loginModel';
 import { IUser } from '../models/userModel';
 import { ICart } from '../models/cartModel';
 import { IProduct } from '../models/productModel';
-
+import { ToastrService } from 'ngx-toastr';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +14,7 @@ export class LoginService {
   userProfile
   currentUser
 
-  constructor(private _https:HttpClient) { }
+  constructor(private _https:HttpClient, private toastr:ToastrService) { }
 
   baseURL=environment.baseURL
   isAuthorised:boolean=false
@@ -79,16 +79,16 @@ export class LoginService {
         currentCart.products[index].total += product.price
         currentCart.total += product.price
         currentCart.totalItems += 1
-        alert('Item added to cart successfully!')
+        this.toastr.success('Item added to cart successfully!')
       }else{
-        alert('Maximum cart capacity is 2!')
+        this.toastr.warning('Maximum cart capacity is 2!')
       }
     }else{
       console.log('new item')
       currentCart.products.push({product:product, quantity:1, total:product.price})
       currentCart.total += product.price
       currentCart.totalItems += 1
-      alert('Item added to cart successfully!')
+      this.toastr.success('Item added to cart successfully!')
 
     }
 
@@ -112,7 +112,7 @@ export class LoginService {
       currentCart.total -= currentCart.products[index].total
       currentCart.totalItems -= currentCart.products[index].quantity
       currentCart.products.splice(index, 1)
-      alert('Item removed from cart!')
+      this.toastr.warning('Item removed from cart!')
    }
 
    sessionStorage.setItem(userId + '_cart', JSON.stringify(currentCart))
@@ -132,14 +132,14 @@ export class LoginService {
 
     if(index!=-1){
       if(currentCart.products[index].quantity>=2){
-        alert('Maximum Quantity is 2!')
+        this.toastr.warning('Maximum Quantity is 2!')
       }
       else if(currentCart.products[index].quantity<2){
         currentCart.products[index].quantity+=1
         currentCart.products[index].total+=product.price
         currentCart.total+=product.price
         currentCart.totalItems += 1
-        alert("Successfully added additional product!")
+        this.toastr.success("Successfully added additional product!")
       }
     }
     sessionStorage.setItem(id+'_cart',JSON.stringify(currentCart))
@@ -163,7 +163,8 @@ export class LoginService {
         currentCart.products[index].total-=product.price
         currentCart.total-=product.price
         currentCart.totalItems -= 1
-        alert("Successfully removed  product from cart!")
+        this.toastr.success("Successfully removed  product from cart!")
+        
     }
     sessionStorage.setItem(id+'_cart',JSON.stringify(currentCart))
   }

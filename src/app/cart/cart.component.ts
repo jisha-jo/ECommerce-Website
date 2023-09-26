@@ -33,7 +33,6 @@ export class CartComponent {
       this.cartItem=this.loginService.getCart(this.currentUser.id)
     }
     this.shipping=10
-    this.total=this.shipping+this.cartItem.total
   }
 
   deleteCartProduct(Productid:number){

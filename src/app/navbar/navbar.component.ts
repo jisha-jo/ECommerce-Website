@@ -23,6 +23,10 @@ export class NavbarComponent {
    }
 
    checkLoggedIn(){
+
+    if(this.loginService.getUsersDetails()){
+      this.currentUser=JSON.parse(sessionStorage.getItem('user'))
+    }
      return this.loginService.getUsersDetails()
    }
 

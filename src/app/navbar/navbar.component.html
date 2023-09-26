@@ -8,9 +8,9 @@
       <ul class="nav navbar-nav ms-auto" style="margin-right: 0px; ">
         
       <i class="fa fa-shopping-cart ms-2" routerLink="cart" aria-hidden="true" style="margin-top: 13px;">
-        <!-- <span class=" translate-middle badge rounded-pill bg-primary" style="font-size:10px;">
-        {{notifs}}
-      </span> -->
+        <span *ngIf="checkLoggedIn()" class=" translate-middle badge rounded-pill bg-primary" style="font-size:10px;">
+        {{loginService.getQuantityOfCart(currentUser.id)}}
+      </span>
     </i>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle ms-2 " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right:70px; color: blue;">

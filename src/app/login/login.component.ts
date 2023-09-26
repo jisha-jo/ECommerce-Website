@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
 import { MessageService } from '../services/message.service';
-import { ToasterService } from '../services/toaster.service';
+import { ToastrService } from 'ngx-toastr';
 import { IUser } from '../models/userModel';
 
 @Component({
@@ -17,7 +17,7 @@ export class LoginComponent {
   currentUser:IUser
 
 
-  constructor(private loginService:LoginService, private toastr:ToasterService, private formbuilder :FormBuilder, private route:Router, private messageService:MessageService){
+  constructor(private loginService:LoginService, private toastr:ToastrService, private formbuilder :FormBuilder, private route:Router, private messageService:MessageService){
     
   }
 
@@ -44,7 +44,6 @@ export class LoginComponent {
         this.loginService.setCurrentUser()
         
         this.toastr.success('Successfully logged in')
-        alert('Logged in successfully')
 
         this.route.navigate(['/category/all'])
 
@@ -58,7 +57,6 @@ export class LoginComponent {
       error=>{
 
         this.toastr.warning('Error has occured')
-        alert("Error")
 
       }
     )
