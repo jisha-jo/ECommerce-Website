@@ -1,3 +1,5 @@
+<!-- how to make it fit inside its column -->
+
 <div class="container bg-light"> 
   
 <div class="row">
@@ -6,8 +8,6 @@
   <div class=" sorts col-lg-2 col-md-12" style="cursor:pointer" (click)="setSortCategory('price','desc')"><small>Price-High to Low</small></div>
   <div class="sorts col-lg-2 col-md-12" style="cursor:pointer" (click)="setSortCategory('rating', 'none')" ><small>Ratings</small></div>
   <div class="gx-3 col-lg-5 ms-auto">
-    <!-- <input [(ngModel)]='Title' class="form-control col-lg-8"  type="text" placeholder="Search by Title...." aria-label="Search">
-  <button class="col-lg-2 btn btn-primary btn-sm" (click)="search()"><i class="fas fa-search"></i></button> -->
   <div class="input-group ms-auto">
     <div class="form-outline"  style="float: right;">
       <input [(ngModel)]='Title' type="search" class="form-control" placeholder="Search Title..." />
@@ -21,7 +21,8 @@
   
 </div>
 </div> 
-<!--  -->
+
+
 <div class="container bg-light">
   <div class="row mt-2">
     <div *ngFor="let item of products?.products|sort:[sortField, sortDirection]|filter:[searchTitle,'title']" class="col col-sm-8 col-md-6 col-lg-4 mt-3">
@@ -37,7 +38,4 @@
         </div>
     </div>
   </div>
-</div> 
-
-
-
+</div>  

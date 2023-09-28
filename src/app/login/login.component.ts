@@ -45,7 +45,7 @@ export class LoginComponent {
         
         this.toastr.success('Successfully logged in')
 
-        this.route.navigate(['/category/all'])
+        this.route.navigate(['/home'])
 
         this.currentUser=success
 

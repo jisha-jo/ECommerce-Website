@@ -5,6 +5,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CartComponent } from './cart/cart.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -30,11 +31,17 @@ const routes: Routes = [
   {
     path:'cart',
     component:CartComponent
+  },
+  {
+    path:'home',
+    component:HomeComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'enabled',
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

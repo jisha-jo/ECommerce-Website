@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { SortPipe } from './pipes/sort.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     ProductDisplayComponent,
     ProfileComponent,
     SortPipe,
-    FilterPipe
+    FilterPipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

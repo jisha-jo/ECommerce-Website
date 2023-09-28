@@ -49,6 +49,7 @@ export class ProductDisplayComponent {
     this.messageService.recieveMessage().subscribe(
       (success:string|null)=>{
         this.category=success
+        console.log("category is:",this.category)
         //in case of all products
         if(this.category==='all'){
 
@@ -60,7 +61,13 @@ export class ProductDisplayComponent {
 
           this.categoryService.getCategory(this.route.snapshot.params['type']).subscribe((success:IProductsList)=>
           {
-              this.productsDisplay()
+              if(this.route.snapshot.params['type']=='all'){
+                this.productsDisplay()
+              }else{
+                this.products=success
+              }
+
+              
             
           },
           error=>{

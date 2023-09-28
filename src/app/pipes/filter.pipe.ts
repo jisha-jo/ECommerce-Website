@@ -15,7 +15,7 @@ export class FilterPipe implements PipeTransform {
     }
 
     for(const productItem of value){
-      if(productItem[propName].toLowerCase()===filterString.toLowerCase()){
+      if((productItem[propName].toLowerCase()).includes(filterString.toLowerCase())){
         result.push(productItem)
       }
     }

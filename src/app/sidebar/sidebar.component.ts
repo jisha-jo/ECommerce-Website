@@ -11,6 +11,7 @@ import { MessageService } from '../services/message.service';
 export class SidebarComponent implements OnInit {
 
   categoryItems:Array<string>=[]
+  activeLink: string | null = null;
 
 constructor(private categoryService:CategoryService,private messageService:MessageService){
   
@@ -35,8 +36,10 @@ getCategoryLists(){
  sendCategory(send_category:string){
   //console.log('send category:', send_category)
    this.messageService.sendMessage(send_category)
+   this.activeLink=send_category
  }
 
+ 
 
 
 }
