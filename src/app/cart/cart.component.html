@@ -1,5 +1,5 @@
  
-<div class="row mt-2">
+<div class="row mt-2" *ngIf="(cartItem.products.length>0)">
 
   
   <div class="col-lg-6 col-md-6 col-sm-8">
@@ -70,4 +70,9 @@
     
   </div>
 
+</div>
+
+<div class="container bg-light py-4 "style="text-align: center;" *ngIf="(cartItem.products.length<1)">
+<p class="display-4"><i class="fa-solid fa-cart-shopping fa-md"></i> Cart is Empty!</p>
+<button class="btn btn-primary" routerLink="/home">Do Some Shopping!</button>
 </div>
