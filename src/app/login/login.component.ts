@@ -15,6 +15,7 @@ export class LoginComponent {
 
   loginForm:FormGroup
   currentUser:IUser
+  isClicked:boolean
 
 
   constructor(private loginService:LoginService, private toastr:ToastrService, private formbuilder :FormBuilder, private route:Router, private messageService:MessageService){
@@ -32,11 +33,16 @@ export class LoginComponent {
       password: ['9uQFF1Lh', Validators.required]
     })
 
-    console.log('formcontrol:',this.loginForm.controls)
+    this.isClicked=false
       
   }
 
   loginUser(){
+
+    //not working
+    this.isClicked=true
+    console.log('is Clicked:',this.isClicked)
+
     this.loginService.checkLogin(this.loginForm.value).subscribe(
       (success:IUser)=>{
         
@@ -61,9 +67,13 @@ export class LoginComponent {
       error=>{
 
         this.toastr.warning('Error has occured')
+        //not working
+        this.isClicked=false
+        console.log('is Clicked:',this.isClicked)
 
       }
     )
   }
+
 
 }

@@ -39,7 +39,7 @@
                   
                 </div>
 
-                <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary btn-block mb-4">
+                <button type="submit" [disabled]="loginForm.invalid || isClicked" class="btn btn-primary btn-block mb-4">
                   Log In
                 </button>
 
