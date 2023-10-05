@@ -1,0 +1,36 @@
+
+<!-- if this div is put after the second div it doesnt work, why? -->
+<div class="container bg-light py-4 "style="text-align: center;" *ngIf="(wishListItem.products.length<1)">
+  <p class="display-4"><i class="fa-solid fa-heart fa-md"></i> No Wishes?</p>
+  <button class="btn btn-primary" routerLink="/home">Do Some Shopping!</button>
+  </div>
+
+<div *ngIf="(wishListItem.products.length>0)">
+
+  <div class="container text-center bg-light py-1">
+    <span class="display-6">Wishlist</span>
+  </div>
+  
+  <div class="row mt -2">
+  
+    <div *ngFor="let product of wishListItem.products" class="col col-sm-8 col-md-6 col-lg-4 mt-3">
+  
+      <div class="card animate__animated animate__slideInUp mb-3 mt-5 px-2" >
+        <img class="card-img-top mt-1 mb-1" src={{product.thumbnail}} alt="Card image cap" style="width:100%;height: 300px;object-fit:contain">
+        <div class="card-body">
+          <h5 class="  card-title">
+            <div>{{product.title}}</div>
+          </h5>
+          <div class="row card-text">
+            <div class="col-lg-8 col-sm-8">{{product.price | currency:'USD'}}</div>
+            <div class="col-lg-2 col-sm-2"><i class="fa-solid fa-trash" (click)="deleteWishListProduct(product.id)"></i></div>
+            <div class="col-lg-2 col-sm-2"><i (click)="addToCart(product)" class="fa-solid fa-cart-shopping"></i>
+            </div>        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

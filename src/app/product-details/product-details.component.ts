@@ -65,19 +65,17 @@ export class ProductDetailsComponent {
     })
   }
 
-  getNotifs(){
-    let currentUser:IUser=this.loginService.getUsersDetails()
-     this.notifs=this.loginService.getQuantityOfCart(currentUser.id)
-
-     //need to send it using behaviour subject
-   }
 
   addToCart(product:IProduct){
 
     for(let i=0;i<this.productQty;i++){
       this.loginService.addToCart(this.currentUser.id, product)
     }
-    this.getNotifs()
+  }
+
+  addToWishList(product:IProduct){
+
+    this.loginService.addToWishList(this.currentUser.id, product)
   }
 
   addToCartStorage(cartProduct:IProduct){

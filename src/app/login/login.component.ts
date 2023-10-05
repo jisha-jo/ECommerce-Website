@@ -53,6 +53,10 @@ export class LoginComponent {
           this.loginService.createCart(this.currentUser.id)
         }
 
+        if(!this.loginService.getWishListStatus(this.currentUser.id)){
+          this.loginService.createWishListCart(this.currentUser.id)
+        }
+
       },
       error=>{
 

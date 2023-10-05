@@ -6,8 +6,6 @@ import { IProduct } from '../models/productModel';
 })
 export class SortPipe implements PipeTransform {
 
-  //the sorting works, but the display isnt working in product.display.html
-
   transform(value: IProduct[],args: any[]): any[] {
     const sortField=args[0]
     const sortDirection=args[1]
@@ -21,6 +19,5 @@ export class SortPipe implements PipeTransform {
       })
     }
     return value
-    console.log(`after ${sortDirection} sorting:`,value)
   }
 }

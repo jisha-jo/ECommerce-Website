@@ -17,6 +17,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { SortPipe } from './pipes/sort.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { HomeComponent } from './home/home.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HomeComponent } from './home/home.component';
     ProfileComponent,
     SortPipe,
     FilterPipe,
-    HomeComponent
+    HomeComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,
