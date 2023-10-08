@@ -39,7 +39,6 @@ export class LoginComponent {
 
   loginUser(){
 
-    //not working
     this.isClicked=true
     console.log('is Clicked:',this.isClicked)
 
@@ -67,7 +66,7 @@ export class LoginComponent {
       error=>{
 
         this.toastr.warning('Error has occured')
-        //not working
+        
         this.isClicked=false
         console.log('is Clicked:',this.isClicked)
 

@@ -1,6 +1,18 @@
-/* @import url('//fonts.googleapis.com/css?family=Roboto|Material+Icons');
+.navbar-brand{
+  color: blue;
+}
 
-.navbar{
-  font-family:'Roboto';
+.fa-shopping-cart{
+  margin-top: 13px;
+}
+.badge{
+  font-size:10px;
+}
 
-} */
+.nav-link{
+  margin-right:70px; color: blue;
+}
+
+.dropdown-item{
+  color: blue;
+}

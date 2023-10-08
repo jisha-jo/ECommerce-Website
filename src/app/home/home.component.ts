@@ -13,21 +13,33 @@ export class HomeComponent implements OnInit{
 
 
   //categoriesArray:String[]=['smartphones','laptops','skincare']
-  product:IProductsList
-  categoriesListArray:IProductsList[]=[]
-  product_smartphone:IProductsList
-  product_laptops:IProductsList
-  product_fragrances:IProductsList
+  // product:IProductsList
+  // categoriesListArray:IProductsList[]=[]
+  // product_smartphone:IProductsList
+  // product_laptops:IProductsList
+  // product_fragrances:IProductsList
+
+  products:IProductsList
+  categories:string[]
   
   constructor(private categoryService:CategoryService, private router:Router, private productService:ProductService){}
 
   ngOnInit(): void {
-    this.getCategory('laptops')
-    this.getCategory('smartphones')
-    this.getCategory('fragrances') 
-  }
+    this.productService.getProductwithoutLimit().subscribe(
+      (success:IProductsList)=>{
+        this.products=success
+        console.log(this.products.products)
+        this.categoryService.getCategoryList().subscribe(
+          (success:string[])=>{
+            this.categories=success
+            console.log(this.categories.length)
+          }
+        )
+      }
+    )
 
-
+    
+}
 
   sendCategory(category_type:string){
     this.router.navigate(['/category/'+ category_type])
@@ -36,35 +48,10 @@ export class HomeComponent implements OnInit{
   sendProduct(sendProduct:IProduct){
     this.productService.sendProduct(sendProduct)
   }
-  getCategory(category:string){
-    this.categoryService.getCategory(category).subscribe((success:IProductsList)=>{
-      if(category=='smartphones')
-      {
-        this.product_smartphone=success
-        console.log(category)
-      }else if(category=='laptops'){
-        this.product_laptops=success
-        console.log(category)
-      }else if(category=='fragrances'){
-        this.product_fragrances=success
-        console.log(category)
-      }
-      // this.categoriesListArray.push(success)
-    })
+
+  filteredProducts(category:string){
+    return this.products.products.filter(item => item.category === category)
+
   }
-
-  // getCategoryLists(){
-  //   this.categoryService.getCategoryList().subscribe(
-  //     (success:any)=>{
-  //       this.categoriesArray=success
-  //       //console.log(this.categoriesArray)
-  //     },
-  //     (error)=>{
-  //       console.log('home:',error)
-  //     }
-  //   )
-  // }
-
-  
 
 }

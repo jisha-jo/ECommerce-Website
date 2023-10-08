@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, retry } from 'rxjs';
 import { IProduct } from '../models/productModel';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
@@ -21,6 +21,10 @@ export class ProductService {
 
   getProduct(id:number){
     return this._http.get(this.URL + 'products/'+ id)
+  }
+
+  getProductwithoutLimit(){
+    return this._http.get("https://dummyjson.com/products?limit=0")
   }
 
   sendProduct(product:IProduct){
