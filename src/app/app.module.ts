@@ -18,6 +18,8 @@ import { SortPipe } from './pipes/sort.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { HomeComponent } from './home/home.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import {CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -42,8 +44,10 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     ToastrModule.forRoot(),
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxSpinnerModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

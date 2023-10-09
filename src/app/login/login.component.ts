@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { MessageService } from '../services/message.service';
 import { ToastrService } from 'ngx-toastr';
 import { IUser } from '../models/userModel';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
@@ -17,8 +18,7 @@ export class LoginComponent {
   currentUser:IUser
   isClicked:boolean
 
-
-  constructor(private loginService:LoginService, private toastr:ToastrService, private formbuilder :FormBuilder, private route:Router, private messageService:MessageService){
+  constructor(private loginService:LoginService, private toastr:ToastrService, private formbuilder :FormBuilder, private route:Router, private messageService:MessageService,private spinner: NgxSpinnerService){
     
   }
 
@@ -41,6 +41,13 @@ export class LoginComponent {
 
     this.isClicked=true
     console.log('is Clicked:',this.isClicked)
+
+    /** spinner starts on init */
+    this.spinner.show();
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 5000);
 
     this.loginService.checkLogin(this.loginForm.value).subscribe(
       (success:IUser)=>{
