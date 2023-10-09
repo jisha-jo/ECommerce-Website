@@ -3,10 +3,11 @@
 <div class="container bg-light"> 
   
 <div class="row">
+
   <div class="col-lg-1 col-md-12" ><small>Sort By:</small></div>
-  <div class="sorts col-lg-2 col-md-12" (click)="setSortCategory('price', 'asec')" [ngClass]="{'clicked': isClicked}"><small>Price-Low To High</small></div>
-  <div class=" sorts col-lg-2 col-md-12" (click)="setSortCategory('price','desc')"><small>Price-High to Low</small></div>
-  <div class="sorts col-lg-2 col-md-12" (click)="setSortCategory('rating', 'none')" ><small>Ratings</small></div>
+  <div class="sorts col-lg-2 col-md-12" (click)="setSortCategory('price', 'asec')" [ngClass]="{'clicked': sortDirection==='asec'}"><small>Price-Low To High</small></div>
+  <div class=" sorts col-lg-2 col-md-12" (click)="setSortCategory('price','desc')" [ngClass]="{'clicked': sortDirection==='desc'}"><small>Price-High to Low</small></div>
+  <div class="sorts col-lg-2 col-md-12" (click)="setSortCategory('rating', 'none')" [ngClass]="{'clicked': sortDirection==='none'}"><small>Ratings</small></div>
   <div class="gx-3 col-lg-5 ms-auto">
   <div class="input-group ms-auto">
     <div class="form-outline"  style="float: right;">

@@ -6,9 +6,8 @@ p{
   cursor:pointer;
 }
 
-/* @import url('//fonts.googleapis.com/css?family=Roboto:wght@10|Material+Icons');
-
-.container-fluid{
-  font-family:'Roboto',sans-serif;
-
-} */
+.active{
+  font-weight: bolder;
+  text-decoration: underline;
+  color: blue;
+}

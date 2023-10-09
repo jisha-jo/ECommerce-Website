@@ -1,8 +1,8 @@
 <div  class="d-flex flex-column align-items-center align-items-sm-start pt-2 min-vh-100" >
   <li class=" nav-item list-unstyled" >
-    <p class="nav-link ms-3 fw-light" [routerLink]="['/category', 'all']" (click)="sendCategory('all')">All Products</p>
+    <p class="nav-link ms-3 fw-light" routerLinkActive="active" [routerLink]="['/category', 'all']" (click)="sendCategory('all')">All Products</p>
 </li>
 
-    <li class="=nav-item list-unstyled" [ngClass]="{ 'active': items === activeLink }" *ngFor="let items of categoryItems">
-      <p class="nav-link ms-3 fw-light" [routerLink]="['/category', items]" (click)="sendCategory(items)">{{items}}</p>
+    <li class="=nav-item list-unstyled" routerLinkActive="active" *ngFor="let items of categoryItems">
+      <p class="nav-link ms-3 fw-light"  [routerLink]="['/category', items]" (click)="sendCategory(items)">{{items}}</p>
   </li> 

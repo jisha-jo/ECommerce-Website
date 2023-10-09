@@ -42,12 +42,10 @@ export class LoginComponent {
     this.isClicked=true
     console.log('is Clicked:',this.isClicked)
 
-    /** spinner starts on init */
     this.spinner.show();
     setTimeout(() => {
-      /** spinner ends after 5 seconds */
       this.spinner.hide();
-    }, 5000);
+    }, 4000);
 
     this.loginService.checkLogin(this.loginForm.value).subscribe(
       (success:IUser)=>{
