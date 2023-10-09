@@ -19,6 +19,7 @@ export class ProductDisplayComponent {
   products:IProductsList
   sortField:string
   sortDirection:string 
+  isClicked:boolean=false
 
   constructor(private product: ProductService, private messageService:MessageService, private categoryService:CategoryService, private route: ActivatedRoute, private productService:ProductService){
 
@@ -96,6 +97,8 @@ export class ProductDisplayComponent {
   setSortCategory(field:string, direction:string){
     this.sortField=field
     this.sortDirection=direction
+
+    this.isClicked = !this.isClicked;
   }
 
   search(){

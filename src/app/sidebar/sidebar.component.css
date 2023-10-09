@@ -2,6 +2,10 @@ p:hover{
   color: blue;
 }
 
+p{
+  cursor:pointer;
+}
+
 /* @import url('//fonts.googleapis.com/css?family=Roboto:wght@10|Material+Icons');
 
 .container-fluid{
