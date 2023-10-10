@@ -32,7 +32,7 @@
           <div class="card-body">
             <h5 class="card-title">{{item.title}}</h5>
             <p class="card-text">{{item.price | currency:'USD'}}</p>
-            <p class="card-text"><i class="fa-solid fa-star" style="color: #ffde0a;"></i> {{item.rating}}</p>
+            <p class="card-text"><i class="fa-solid fa-star" [ngClass]="{'high':item.rating>=4.5,'medium':item.rating>=4 && item.rating<4.5,'low': item.rating<4}"></i> {{item.rating}}</p>
             <p class="card-text">{{item.description}}</p>
             <a href="#" class="btn btn-primary" (click)="sendProduct(item)" [routerLink] ="['/product_display', item.id]">Add To Cart</a>
           </div>

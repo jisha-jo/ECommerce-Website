@@ -22,3 +22,15 @@ img{
 .clicked {
   color: blue; 
 }
+
+.high{
+  color: yellow;
+}
+
+.low{
+  color: red;
+}
+
+.medium{
+  color: green ;
+}
