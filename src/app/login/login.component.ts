@@ -55,6 +55,8 @@ export class LoginComponent {
         
         this.toastr.success('Successfully logged in')
 
+        sessionStorage.setItem('token',Math.random().toString())
+
         this.route.navigate(['/home'])
 
         this.currentUser=success

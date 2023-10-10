@@ -20,6 +20,7 @@ export class NavbarComponent {
     
    logoutUser(){
      this.loginService.userLogout()
+     sessionStorage.removeItem('token')
    }
 
    checkLoggedIn(){

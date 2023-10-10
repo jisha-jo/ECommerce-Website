@@ -7,39 +7,49 @@ import { ProfileComponent } from './profile/profile.component';
 import { CartComponent } from './cart/cart.component';
 import { HomeComponent } from './home/home.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { loginAuthGuard } from './login-auth.guard';
+import { logoutAuthGuard } from './logout-auth.guard';
 
 const routes: Routes = [
   {
     path:'category/:type',
-    component: ProductDisplayComponent
+    component: ProductDisplayComponent,
+    canActivate:[loginAuthGuard]
   },
   {
     component:ProductDetailsComponent,
-    path:'product_display/:id'
+    path:'product_display/:id',
+    canActivate:[loginAuthGuard]
   },
   {
     path:'login',
-    component:LoginComponent
+    component:LoginComponent,
+    canActivate:[logoutAuthGuard]
   },
   {
     path:'profile',
-    component:ProfileComponent
+    component:ProfileComponent,
+    canActivate:[loginAuthGuard]
   },
   {
     path:'',
-    component:LoginComponent
+    component:LoginComponent,
+    canActivate:[logoutAuthGuard]
   },
   {
     path:'cart',
-    component:CartComponent
+    component:CartComponent,
+    canActivate:[loginAuthGuard]
   },
   {
     path:'home',
-    component:HomeComponent
+    component:HomeComponent,
+    canActivate:[loginAuthGuard]
   },
   {
     path:'wishlist',
-    component:WishlistComponent
+    component:WishlistComponent,
+    canActivate:[loginAuthGuard]
   }
 ];
 
