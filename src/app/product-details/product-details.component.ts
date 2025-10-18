@@ -9,9 +9,10 @@ import { IUser } from '../models/userModel';
 import { LoginService } from '../services/login.service';
 
 @Component({
-  selector: 'app-product-details',
-  templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.css']
+    selector: 'app-product-details',
+    templateUrl: './product-details.component.html',
+    styleUrls: ['./product-details.component.css'],
+    standalone: false
 })
 export class ProductDetailsComponent {
 

@@ -8,9 +8,10 @@ import { IUser } from '../models/userModel';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css'],
+    standalone: false
 })
 export class LoginComponent {
 

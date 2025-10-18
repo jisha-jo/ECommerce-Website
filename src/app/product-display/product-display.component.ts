@@ -6,9 +6,10 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/product.service';
 
 @Component({
-  selector: 'app-product-display',
-  templateUrl: './product-display.component.html',
-  styleUrls: ['./product-display.component.css']
+    selector: 'app-product-display',
+    templateUrl: './product-display.component.html',
+    styleUrls: ['./product-display.component.css'],
+    standalone: false
 })
 export class ProductDisplayComponent {
 
