@@ -44,9 +44,9 @@
 
 <div class="container bg-light">
   <div class="row mt-4" *ngFor="let category of categories">
-    <h3 (click)="sendCategory(category)">Best of {{category}}</h3>
+    <h3 (click)="sendCategory(category)">Best of {{category.name}}</h3>
     <div class="card-group card-group-scroll">
-      <div class="col col-sm-8 col-md-6 col-lg-4" *ngFor="let item of filteredProducts(category)">
+      <div class="col col-sm-8 col-md-6 col-lg-4" *ngFor="let item of filteredProducts(category.slug)">
         <div class="card h-200" (click)="sendProduct(item)" [routerLink]="['/product_display', item.id]">
           <img src={{item.thumbnail}} class="card-img-top" />
           <div class="card-body">

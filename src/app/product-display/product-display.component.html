@@ -25,18 +25,21 @@
 
 
 <div class="container bg-light">
-  <div class="row mt-2">
-    <div *ngFor="let item of products?.products|sort:[sortField, sortDirection]|filter:[searchTitle,'title']" class="col col-sm-8 col-md-6 col-lg-4 mt-3">
-        <div class="card h-100">
+  <div class="row mt-2" >
+    <!-- the overflow when col-lg-3 is set is a bootstrap issue. if you do it custom you dont face this issue -->
+    <div *ngFor="let item of products?.products|sort:[sortField, sortDirection]|filter:[searchTitle,'title']"  class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3" style="padding: 0px;">
+      <div >
+        <div class="card h-100" [routerLink] ="['/product_display', item.id]" >
           <img src={{item.thumbnail}} class="card-img-top" alt="Product Image">
           <div class="card-body">
             <h5 class="card-title">{{item.title}}</h5>
             <p class="card-text">{{item.price | currency:'USD'}}</p>
             <p class="card-text"><i class="fa-solid fa-star" [ngClass]="{'high':item.rating>=4.5,'medium':item.rating>=4 && item.rating<4.5,'low': item.rating<4}"></i> {{item.rating}}</p>
-            <p class="card-text">{{item.description}}</p>
             <a href="#" class="btn btn-primary" (click)="sendProduct(item)" [routerLink] ="['/product_display', item.id]">Add To Cart</a>
           </div>
         </div>
+      </div>
+        
     </div>
   </div>
 </div>  

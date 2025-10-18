@@ -4,5 +4,5 @@
 </li>
 
     <li class="=nav-item list-unstyled" routerLinkActive="active" *ngFor="let items of categoryItems">
-      <p class="nav-link ms-3 fw-light"  [routerLink]="['/category', items]" (click)="sendCategory(items)">{{items}}</p>
+      <p class="nav-link ms-3 fw-light"  [routerLink]="['/category', items.name]" (click)="sendCategory(items.name)">{{items.name}}</p>
   </li> 
